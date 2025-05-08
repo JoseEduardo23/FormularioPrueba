@@ -1,20 +1,93 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Formulario
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="formulario" (ngSubmit)="save()">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div class="form-group">
+      <label>Nombre</label><br>
+      <input type="text" formControlName="nombre" placeholder="Ingresa tu primer nombre">
+    </div>
+
+    <div class="form-group">
+      <label>Apellido</label><br>
+      <input type="text" formControlName="apellido" placeholder="Ingresa tu apellido">
+    </div>
+
+    <div class="form-group">
+      <label>Edad</label><br>
+      <input type="number" formControlName="edad" placeholder="Ingresa tu edad">
+    </div>
+
+    <div class="form-group">
+      <label>Fecha de nacimiento</label><br>
+      <input type="date" formControlName="fechaNacimiento">
+    </div>
+
+    <div class="form-group">
+      <label for="ciudad">Ciudad</label><br>
+      <select id="ciudad" formControlName="ciudadOrigen">
+        <option value="" disabled selected>Selecciona una ciudad</option>
+        <option value="Quito">Quito</option>
+        <option value="Guayaquil">Guayaquil</option>
+        <option value="Cuenca">Cuenca</option>
+        <option value="Ambato">Ambato</option>
+        <option value="Manta">Manta</option>
+        <option value="Portoviejo">Portoviejo</option>
+        <option value="Loja">Loja</option>
+        <option value="Esmeraldas">Esmeraldas</option>
+        <option value="Machala">Machala</option>
+        <option value="Riobamba">Riobamba</option>
+        <option value="Ibarra">Ibarra</option>
+        <option value="Latacunga">Latacunga</option>
+        <option value="Tena">Tena</option>
+        <option value="Puyo">Puyo</option>
+        <option value="Babahoyo">Babahoyo</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label><br>
+      <input type="email" formControlName="email" placeholder="ej. email@example.com">
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label><br>
+      <input type="number" formControlName="telefono" placeholder="ej. 0123456789">
+    </div>
+
+    <div class="form-group">
+      <label>Dirección</label><br>
+      <input type="text" formControlName="direccion" placeholder="ej. Av-123-ABC">
+    </div>
+
+    <div class="form-group">
+      <label>Cédula</label><br>
+      <input type="text" formControlName="cedula" placeholder="***************************">
+    </div>
+
+    <div class="form-group">
+      <label>Estado Civil</label><br>
+      <label>
+        <input type="radio" formControlName="estado" value="Soltero"> Soltero
+      </label>
+      <label>
+        <input type="radio" formControlName="estado" value="Casado"> Casado
+      </label>
+      <label>
+        <input type="radio" formControlName="estado" value="Divorciado"> Divorciado
+      </label>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="submit-btn">
+        Guardar datos
+      </button>
+    </div>
+  </form>
 </ion-content>
