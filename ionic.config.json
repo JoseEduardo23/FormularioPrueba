@@ -1,0 +1,7 @@
+{
+  "name": "formulario25A",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
